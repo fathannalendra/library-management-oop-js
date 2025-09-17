@@ -31,6 +31,10 @@
             cekPassword(input) {
                 return input === this.#password
             }
+        
+        set password(value) {
+                this.#password = value
+            }
 
             pinjamBuku(buku) {
                 this.daftarBukuDipinjam.push(buku)
@@ -88,4 +92,6 @@
         Perpustakaan.tampilkanBuku()
 
         console.log(`Password Fathan benar? ${fathan.cekPassword(12345)}`)
-        console.log(`Password Fathan benar? ${fathan.cekPassword(1234)}`)
+
+        fathan.password = 1234
+        console.log(`Password Fathan benar? ${fathan.cekPassword(12345)}`)
